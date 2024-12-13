@@ -13,10 +13,13 @@
 
 //@import '@angular/material/prebuilt-themes/deeppurple-amber.css';  //Working
 
-//@import '@angular/material/prebuilt-themes/indigo-pink.css';  //Working
+@import '@angular/material/prebuilt-themes/indigo-pink.css';  //Working
 
 //@import '@angular/material/prebuilt-themes/pink-bluegrey.css'; // Working Dark
 
 //@import '@angular/material/prebuilt-themes/purple-green.css'; // Working Dark
 
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

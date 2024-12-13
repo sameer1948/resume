@@ -1,9 +1,307 @@
-<!-- app.component.html -->
-<form #myForm="ngForm">
-  <label for="username">Username:</label>
-  <input type="text" id="username" name="username" [(ngModel)]="user.username" required />
+<mat-card class="home-container">
+  <mat-card class="profile-card">
+    <mat-grid-list cols="3" rowHeight="3:2">
+      <mat-grid-tile colspan="2">
+        <mat-grid-list cols="2" rowHeight="40px" class="details-section">
+          <mat-grid-tile colspan="2">
+            <h1> <mat-icon>person</mat-icon> {{name}} </h1>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h2> <mat-icon>engineering</mat-icon> {{role}} </h2>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3> <mat-icon>mail</mat-icon> {{email}} </h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3> <mat-icon>work</mat-icon> {{works}} </h3>
+          </mat-grid-tile>
+          <mat-grid-tile>
+            <h3> <mat-icon>phone</mat-icon> {{phone}} </h3>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="2">
+            <h3> <mat-icon>home</mat-icon> {{address}}</h3>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="2">
+            <h3> <mat-icon>3p</mat-icon> {{about}} </h3>
+          </mat-grid-tile>
+          <mat-grid-tile colspan="2">
+            <h2>
+              <mat-icon>link</mat-icon>                            
+              <a [href]=linkedIn>Linked In</a>
+              <a [href]=githubLink>Git Hub</a>
+              <a [href]=githubLink>youtube</a>
+            </h2>
+          </mat-grid-tile>          
+        </mat-grid-list>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div class="profile-picture">
+          <img [src]="IMAGE_PATH" alt="Profile Picture">
+        </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </mat-card>
 
-  <button (click)="submitForm()">Submit</button>
-</form>
+  <mat-card class="body-card">
+    <mat-grid-list cols="3" rowHeight="175px">
+      <mat-grid-tile colspan="2" rowspan="3">
 
-<p>Your username is: {{ user.username }}</p>
+        <mat-card class="projects-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>work_history</mat-icon> Work Experience</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+
+          <mat-card-content>
+
+            <mat-list role="list" *ngFor="let experience of workExperience; track work">
+
+              <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+              
+                <mat-card class="experience-card" appearance="outlined">
+              
+                  <mat-card-header>
+                    <mat-card-title>{{experience.jobTitle}}</mat-card-title>
+                    <mat-card-subtitle>
+                      {{experience.org}} , {{experience.location}}
+                      <br>
+                      Period : {{experience.startDate}} - {{experience.endDate ?? 'present'}}
+                    </mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <strong>Roles & Responsibilities : </strong>
+                    <mat-divider></mat-divider>
+                    <mat-list role="list" *ngFor="let rb of experience.resp; track rb">
+                      <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+                      <mat-icon>adjust</mat-icon> {{rb}}
+                      </mat-list-item>
+                    </mat-list>                    
+                  </mat-card-content>
+
+                </mat-card>
+              </mat-list-item>
+
+            </mat-list>
+
+
+          </mat-card-content>
+        </mat-card>
+
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-card class="skills-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>psychology</mat-icon> Skills</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+
+            <mat-chip-listbox>
+              @for (skill of skills; track skill) {
+              <mat-chip-option>{{skill}}</mat-chip-option>
+              }
+            </mat-chip-listbox>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="certificates-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>card_membership</mat-icon> Certifications</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+
+            <mat-chip-listbox>
+              @for (cert of certifications; track cert) {
+              <mat-chip-option>{{cert.title}} ({{cert.startDate}} / {{cert.endDate ?? 'Present'}})</mat-chip-option>
+              }
+            </mat-chip-listbox>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="languages-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>record_voice_over</mat-icon> Languages</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+
+            <mat-chip-listbox>
+              @for (language of languages; track language) {
+              <mat-chip-option>{{language}}</mat-chip-option>
+              }
+            </mat-chip-listbox>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile colspan="2" rowspan="7">
+        <mat-card class="projects-card" appearance="outlined" style="width: 100%;">
+          <mat-card-header>
+            <mat-card-title><mat-icon>history_edu</mat-icon> Personal Projects</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+
+            <mat-list role="list" *ngFor="let experience of workExperience; track work">
+
+              <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+              
+                <mat-card class="experience-card" appearance="outlined">
+              
+                  <mat-card-header>
+                    <mat-card-title>{{experience.jobTitle}}</mat-card-title>
+                    <mat-card-subtitle>
+                      {{experience.org}} , {{experience.location}}
+                      <br>
+                      Period : {{experience.startDate}} - {{experience.endDate ?? 'present'}}
+                    </mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <mat-list role="list" *ngFor="let rb of experience.resp; track rb">
+                      <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+                      {{rb}}
+                      </mat-list-item>
+                    </mat-list>                    
+                  </mat-card-content>
+
+                </mat-card>
+              </mat-list-item>
+
+            </mat-list>
+            <mat-list role="list" *ngFor="let experience of workExperience; track work">
+
+              <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+              
+                <mat-card class="experience-card" appearance="outlined">
+              
+                  <mat-card-header>
+                    <mat-card-title>{{experience.jobTitle}}</mat-card-title>
+                    <mat-card-subtitle>
+                      {{experience.org}} , {{experience.location}}
+                      <br>
+                      Period : {{experience.startDate}} - {{experience.endDate ?? 'present'}}
+                    </mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <mat-list role="list" *ngFor="let rb of experience.resp; track rb">
+                      <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+                      {{rb}}
+                      <br>
+                      {{rb}}
+                      </mat-list-item>
+                    </mat-list>                    
+                  </mat-card-content>
+
+                </mat-card>
+              </mat-list-item>
+
+            </mat-list>
+
+            <mat-list role="list" *ngFor="let experience of workExperience; track work">
+
+              <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+              
+                <mat-card class="experience-card" appearance="outlined">
+              
+                  <mat-card-header>
+                    <mat-card-title>{{experience.jobTitle}}</mat-card-title>
+                    <mat-card-subtitle>
+                      {{experience.org}} , {{experience.location}}
+                      <br>
+                      Period : {{experience.startDate}} - {{experience.endDate ?? 'present'}}
+                    </mat-card-subtitle>
+                  </mat-card-header>
+
+                  <mat-card-content>
+                    <mat-list role="list" *ngFor="let rb of experience.resp; track rb">
+                      <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+                      {{rb}}
+                      <br>
+                      {{rb}}
+                      </mat-list-item>
+                    </mat-list>                    
+                  </mat-card-content>
+
+                </mat-card>
+              </mat-list-item>
+
+            </mat-list>
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      
+      <mat-grid-tile rowspan="3">
+        <mat-card class="educations-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>school</mat-icon> Education</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>            
+            <mat-card *ngFor="let education of educations; track education" style="margin: 10px;">
+              <mat-card-header>
+                <mat-card-title> {{education.title}}<mat-divider></mat-divider></mat-card-title>
+                <mat-card-subtitle>
+                  {{education.insititue}}, {{education.address}}
+                  <br>
+                  Year : {{education.start}} - {{education.end}}                  
+                  <br>            
+                  Score : {{education.score}}
+                  <br>
+                  Course : {{education.course}}
+                </mat-card-subtitle>
+              </mat-card-header>              
+            </mat-card>                               
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile rowspan="2">
+        <mat-card class="achievements-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>emoji_events</mat-icon> Achievements</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+
+            <mat-list role="list" *ngFor="let achievement of achievements; track achievement">
+              <mat-list-item role="listitem" style="height: 50px;">
+              <mat-icon matSuffix>military_tech</mat-icon> {{achievement}}
+              </mat-list-item>
+            </mat-list>                    
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile rowspan="2">
+        <mat-card class="interests-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>interests</mat-icon> Interests</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <mat-list role="list" *ngFor="let interest of interests; track interest">
+              <mat-list-item role="listitem" style="height: 40px;">
+              <mat-icon matSuffix>label_important</mat-icon> {{interest}}
+              </mat-list-item>
+            </mat-list>                    
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>      
+
+    </mat-grid-list>
+  </mat-card>
+</mat-card>
