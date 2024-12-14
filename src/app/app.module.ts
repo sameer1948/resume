@@ -10,18 +10,20 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
     MatCardModule,
     MatChipsModule,
     MatDividerModule, 
     MatGridListModule, 
     MatListModule,
-    MatIconModule,         // Add this line
-    BrowserAnimationsModule  // Make sure you also have this for Angular Material animations
+    MatIconModule,        
   ],
   providers: [],
   bootstrap: [AppComponent]
