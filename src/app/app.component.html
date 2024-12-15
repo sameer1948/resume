@@ -75,7 +75,7 @@
 
           <mat-card-content>
 
-            <mat-list role="list" *ngFor="let experience of workExperience; track work">
+            <mat-list role="list" *ngFor="let experience of workExperience">
 
               <mat-list-item role="listitem" style="height: 100%;width: 100%;">
 
@@ -110,8 +110,8 @@
                       <strong> <mat-icon [svgIcon]="roles"></mat-icon> Roles & Responsibilities : </strong>
                     </div>
 
-                    <mat-list role="list" *ngFor="let rb of experience.resp; track rb">
-                      <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+                    <mat-list *ngFor="let rb of experience.resp">
+                      <mat-list-item style="height: 100%;width: 100%;">
                         <div class="projects-card-point">
                           <mat-icon>adjust</mat-icon> {{rb}}
                         </div>
@@ -180,7 +180,7 @@
           </mat-card-header>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-card class="educations-card" *ngFor="let education of educations; track education"
+            <mat-card class="educations-card" *ngFor="let education of educations"
               style="margin: 10px;">
               <mat-card-header>
                 <div class="header-content">
@@ -233,9 +233,9 @@
 
           <mat-card-content>
 
-            <mat-list role="list" *ngFor="let experience of personalExperience; track work">
+            <mat-list *ngFor="let experience of personalExperience">
 
-              <mat-list-item role="listitem" style="height: 100%; width: 100%;">
+              <mat-list-item style="height: 100%; width: 100%;">
 
                 <mat-card class="experience-card" appearance="outlined">
                   <mat-card-header>
@@ -364,9 +364,9 @@
           </mat-card-header>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-list role="list" *ngFor="let interest of interests; track interest">
+            <mat-list *ngFor="let interest of interests">
               <div class="interests-card-point">
-                <mat-list-item role="listitem" style="height: 40px;">
+                <mat-list-item style="height: 40px;">
                   <mat-icon matSuffix>label_important</mat-icon> {{interest}}
                 </mat-list-item>
               </div>
@@ -377,12 +377,12 @@
 
     </mat-grid-list>
   </mat-card>
-  <mat-card-footer style="display: flex; justify-content: center; gap: 20px;">
+  <!-- <mat-card-footer style="display: flex; justify-content: center; gap: 20px;">
     <button mat-fab extended color="accent" matTooltip="Download As pdf" (click)="download()">
       <mat-icon>download</mat-icon>
       Download
     </button>
 
-  </mat-card-footer>
+  </mat-card-footer> -->
 
 </mat-card>
