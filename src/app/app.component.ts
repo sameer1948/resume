@@ -28,11 +28,12 @@ export class AppComponent {
 
   name : string = 'Sameer Sheik';
   role : string = 'Software Developer';
-  works : string = 'Works At : TCS';
+  works : string = 'Tata Consultancy Services';
 
   email : string = 'Sameer.Sameer185@gmail.com';
   phone : string = '+91 - 8790761948';
-  address : string = '3-98, Water Tank Street, PedaRayavaram, Rangampet Mandal, Andhra Pradesh, PIN : 533291';
+  //address : string = '3-98, Water Tank Street, PedaRayavaram, Rangampet Mandal, Andhra Pradesh, PIN : 533291';
+  address : string = 'Rajahmundry, Andhra Pradesh';
 
   about : string = 'Work more Innovative for better Tomorrow.'
 
@@ -48,7 +49,7 @@ export class AppComponent {
   workExperience : any = [
     {
       jobTitle : 'Software Engineer', 
-      org : 'TataTata Consultancy Services', 
+      org : 'Tata Consultancy Services', 
       location : 'Hyderabad', 
       startDate : '03-Apr-2023', 
       endDate : undefined,

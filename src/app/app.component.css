@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
 .home-container {
   margin: 30px;
   padding-bottom: 20px;
@@ -208,4 +210,13 @@ mat-grid-tile{border-radius: 1%;
   word-wrap: break-word;
   white-space: normal;
 } */
+
+.signature {
+  font-family: 'Pacifico', cursive; /* Custom script font */
+  font-size: 18px;
+  color: #333; /* Dark color for readability */
+  letter-spacing: 2px; /* Slight letter spacing */
+  font-weight: normal; /* Normal weight for a handwritten look */  
+  transform: skewX(-10deg); /* Skewed for a handwritten effect */
+}
 
