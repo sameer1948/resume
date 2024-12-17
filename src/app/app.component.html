@@ -63,9 +63,9 @@
 
     <mat-grid-list cols="3" rowHeight="175px">
 
-      <mat-grid-tile colspan="2" rowspan="4">
+      <mat-grid-tile colspan="2" rowspan="5">
 
-        <mat-card class="projects-card" appearance="outlined">
+        <mat-card class="projects-card" appearance="outlined" style="width: 100%;"> 
 
           <mat-card-header>
             <mat-card-title><mat-icon>work_history</mat-icon> Work Experience</mat-card-title>
@@ -75,7 +75,7 @@
 
           <mat-card-content>
 
-            <mat-list role="list" *ngFor="let experience of workExperience">
+            . <mat-list role="list" *ngFor="let experience of workExperience">
 
               <mat-list-item role="listitem" style="height: 100%;width: 100%;">
 
@@ -117,6 +117,16 @@
                         </div>
                       </mat-list-item>
                     </mat-list>
+
+                    <!-- <br>
+                    @for (rb of experience.resp; track rb) {              
+                      <div class="projects-card-point">
+                        <p>
+                          <mat-icon matSuffix>adjust</mat-icon>
+                          {{rb}}
+                        </p>
+                      </div>
+                      } -->
 
                   </mat-card-content>
 
@@ -180,8 +190,7 @@
           </mat-card-header>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-card class="educations-card" *ngFor="let education of educations"
-              style="margin: 10px;">
+            <mat-card class="educations-card" *ngFor="let education of educations" style="margin: 10px;">
               <mat-card-header>
                 <div class="header-content">
                   <mat-card-title>
@@ -296,7 +305,7 @@
 
       </mat-grid-tile>
 
-      <mat-grid-tile rowspan="2">
+      <mat-grid-tile rowspan="4">
         <mat-card class="achievements-card" appearance="outlined">
           <mat-card-header>
             <mat-card-title><mat-icon>emoji_events</mat-icon> Achievements</mat-card-title>
@@ -304,14 +313,54 @@
           <mat-divider></mat-divider>
           <mat-card-content>
 
-
-
             @for (achievement of achievements; track achievement) {
             <br>
             <div class="achievements-card-point">
               <p>
                 <mat-icon matSuffix>military_tech</mat-icon>
                 {{achievement}}
+              </p>
+            </div>
+            }
+
+          </mat-card-content>
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="links-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>link</mat-icon> Links</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <div class="links-card-action">
+              <ng-container *ngFor="let link of links;">
+                <a [href]="link.url" target="_blank" rel="noopener noreferrer">
+                  <button mat-icon-button>
+                    <mat-icon [svgIcon]="link.icon"></mat-icon>
+                  </button>
+                </a>
+              </ng-container>
+            </div>
+          </mat-card-content>
+
+        </mat-card>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-card class="interests-card" appearance="outlined">
+          <mat-card-header>
+            <mat-card-title><mat-icon>interests</mat-icon> Interests</mat-card-title>
+          </mat-card-header>
+          <mat-divider></mat-divider>
+          <mat-card-content>
+            <br>
+            @for (interest of interests; track interest) {
+            <div class="interests-card-point">
+              <p>
+                <mat-icon matSuffix>label_important</mat-icon>
+                {{interest}}
               </p>
             </div>
             }
@@ -338,40 +387,28 @@
         </mat-card>
       </mat-grid-tile>
 
-      <mat-grid-tile>
-        <mat-card class="links-card" appearance="outlined">
-          <mat-card-header>
-            <mat-card-title><mat-icon>link</mat-icon> Links</mat-card-title>
-          </mat-card-header>
-          <mat-divider></mat-divider>
-          <mat-card-content>
-
-            <div class="links-card-action">
-
-              @for (link of links; track link) {
-              <button mat-icon-button><mat-icon [svgIcon]="link.icon"></mat-icon></button>
-              }
-            </div>
-
-          </mat-card-content>
-        </mat-card>
-      </mat-grid-tile>
-
       <mat-grid-tile rowspan="2">
-        <mat-card class="interests-card" appearance="outlined">
+        <mat-card class="abouts-card" appearance="outlined">
           <mat-card-header>
-            <mat-card-title><mat-icon>interests</mat-icon> Interests</mat-card-title>
+            <mat-card-title><mat-icon>emoji_people</mat-icon> About Me</mat-card-title>
           </mat-card-header>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-list *ngFor="let interest of interests">
-              <div class="interests-card-point">
-                <mat-list-item style="height: 40px;">
-                  <mat-icon matSuffix>label_important</mat-icon> {{interest}}
-                </mat-list-item>
-              </div>
-            </mat-list>
+            <br>
+            @for (about of abouts; track about) {
+            <div class="abouts-card-point">
+              <p>
+                <mat-icon matSuffix>boy</mat-icon>
+                {{about}}
+              </p>
+            </div>
+            }
+
           </mat-card-content>
+
+          <mat-card-actions align="end">
+            <strong>Sameer Sheik</strong>
+          </mat-card-actions>
         </mat-card>
       </mat-grid-tile>
 

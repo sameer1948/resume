@@ -164,6 +164,7 @@ mat-grid-tile{border-radius: 1%;
 .certificates-card,
 .languages-card,
 .interests-card,
+.abouts-card,
 .achievements-card,
 .links-card {
   width: 80%;
@@ -190,6 +191,7 @@ mat-grid-tile{border-radius: 1%;
 
 .projects-card-point,
 .interests-card-point,
+.abouts-card-point,
 .achievements-card-point,
 .educations-card-point {  
   overflow: hidden;
@@ -200,3 +202,10 @@ mat-grid-tile{border-radius: 1%;
   }
 
 }
+
+/* .projects-card-point p {
+  margin: 10px;
+  word-wrap: break-word;
+  white-space: normal;
+} */
+

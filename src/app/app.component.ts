@@ -54,10 +54,24 @@ export class AppComponent {
       endDate : undefined,
       description : 'Tata Consultancy Services Limited is an Indian multinational information technology services.',
       resp : [
-        'Improved efficiency by migrating ETL Batch Jobs to Spring Boot resulting in faster processing.', 
-        ' Migrated ETL Batch Jobs to Spring Boot with integration of Control-M and Grafana Dashboard.',
-        ' Achieved 20% increase in testing accuracy by implementing Spock with Groovy for Application Testing.'
+        ' Implementing efficient processes for data ingestion, transformation, and storage in financial systems.',
+        ' Utilize chunk-based processing and multi-threading to enhance batch job efficiency.', 
+        ' Implement error handling, retry logic, and transaction management to ensure data integrity.',
+        ' Monitor batch job execution, status, and performance using Control-M and Grafana.',        
+        ' Implementing Spock with Groovy for Application Testing.',
+        ' Support and maintain batch jobs, applying updates as business requirements evolve.',
+        
       ]
+
+      // resp : [
+      //   ' Develop and maintain batch jobs using Spring Batch to process large volumes of data efficiently.',
+      //   ' Utilize chunk-based processing and multi-threading techniques to improve the efficiency of batch jobs.',                
+      //   ' Implement error handling, retry logic, and transaction management within batch jobs to ensure data integrity and consistency.',
+      //   ' Monitor batch job execution, job status, and performance using Control-M and Grafana.',
+      //   ' Develop unit and integration tests for batch jobs Using Spock with Groovy to ensure correctness and performance.',
+      //   ' Document the design, development, and execution processes of batch jobs to ensure knowledge sharing and maintainability.',
+      //   ' Provide ongoing support and maintenance for existing batch jobs, applying necessary updates or changes as business requirements evolve.'
+      // ]
     },
 
     {
@@ -79,13 +93,15 @@ export class AppComponent {
 
   personalExperience : any = [
     {
-      title : 'Web Based Examination Application', 
+      title : 'Restaurant Application', 
       year : '2024', 
-      description : ' This Application is useful for conducting MCQ Based Mock Test.',      
+      description : 'Angular Application that allows users to browse menus, place orders, and leave feedback.',
       points : [
-        'Application Motive to Online Mock Examination within the Organization', 
-        'Need to Add the Question and answer in the Database along with Date of examination.',
-        'Application capable enough to generate repots on time and send it over the email.'
+        ' Implemented a dynamic menu that updates in real-time with Angular components.',
+        ' It allowing users to view item details, add items to their cart, and place orders.', 
+        ' The ordering system communicates with the backend through Spring Boot REST APIs Calls.',
+        ' The authentication was managed by Spring Security on the backend.',
+        ' Integrated JWT (JSON Web Tokens) for secure user authentication.',       
       ],
       fornt : 'Angular', 
       middle: 'Spring Boot', 
@@ -146,12 +162,20 @@ export class AppComponent {
     }    
   ];
   
-  interests : any = ['Science Experiments', 'Video Games', 'Learning New Technologies', 'Teaching Programming']
+  interests : any = [
+    'Science Experiments',     
+    'Learning New Technologies', 
+    'Teaching Programming'
+  ];
 
   achievements : any = [
-    'Development and Deployment of Spring Batch Application.', 
-    '5 Star Rating for Employment', 
-    'Topper in Post Graduaction'];
+    ' Successfully optimized the performance of batch processing jobs, reducing job execution time by 40% through the implementation of chunk-based processing and multithreading.', 
+    ' Implemented advanced retry logic to handle failed job executions, reducing the occurrence of job failures by 20% and improving overall system reliability.',     
+    ' Led the migration of the entire application codebase from Java 1.5 to Java 1.8, ensuring seamless transition with no downtime, enabling better performance with Java 1.8.',
+    ' Managed the migration project with minimal disruption, coordinating testing and deployment schedules to ensure that users experienced zero downtime during the upgrade process.',
+    ' Develop unit and integration tests for batch jobs Using Spock with Groovy to ensure correctness and performance.',
+
+  ];
 
 
   educations : any = [
@@ -164,22 +188,27 @@ export class AppComponent {
   links : any = [ 
     {
       name : 'linkedIn',
-      link : 'https://www.linkedin.com/in/sameer-93668a239/',
+      url : 'https://www.linkedin.com/in/sameer-93668a239/',
       icon : this.linkedIn
     },    
     {
       name : 'git',
-      link : 'https://github.com/sameer1948',
+      url : 'https://github.com/sameer1948',
       icon : this.git
     },
     {
       name : 'youtube',
-      link : 'https://www.youtube.com/@sameerscoderoom',
+      url : 'https://www.youtube.com/@sameerscoderoom',
       icon : this.youtube
     },
 
   ];
   
+  abouts : any = [
+    'Always eager to learn, I strive to stay up-to-date with industry trends and contribute to improving team workflows and processes. With a proactive approach to problem-solving and a passion for technology, I am eager to continue growing and delivering value in my role.',
+    //' Driven by a constant desire to learn, I stay up-to-date with the latest industry trends and actively contribute to enhancing team workflows and processes. With a proactive mindset and a passion for technology, I am committed to continuous growth and delivering impactful solutions in my role."'
+  ];
+
   constructor(private iconRegistry: MatIconRegistry, private sanitizer: DomSanitizer, private cdr: ChangeDetectorRef) {
     //this.iconRegistry.addSvgIcon('database', this.sanitizer.bypassSecurityTrustResourceUrl('assets/database.svg'));
     const svgIconContent = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" 
