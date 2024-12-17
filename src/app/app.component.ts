@@ -25,6 +25,8 @@ export class AppComponent {
   readonly finance : string = 'finance';
   readonly computer : string = 'computer';
   readonly eduSpecial : string = 'eduSpecial';
+  readonly restaurant : string = 'restaurant';
+  
 
   name : string = 'Sameer Sheik';
   role : string = 'Software Developer';
@@ -202,6 +204,11 @@ export class AppComponent {
       url : 'https://www.youtube.com/@sameerscoderoom',
       icon : this.youtube
     },
+    {
+      name : 'angular',
+      url : 'https://web-restaurant.pages.dev/',
+      icon : this.restaurant
+    },
 
   ];
   
@@ -255,6 +262,30 @@ export class AppComponent {
     
     const eduIconContent = `<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" 
     fill="#5f6368"><path d="M360-120v-200q-62-5-121.5-14T120-360l20-80q83 23 168 31.5t172 8.5q86 0 171-8.5T820-440l20 80q-60 17-119.5 26T600-320v200H360Zm120-320q-34 0-57-23t-23-57q0-33 23-56.5t57-23.5q33 0 56.5 23.5T560-520q0 34-23.5 57T480-440ZM180-560q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T240-620q0 26-17.5 43T180-560Zm600 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T840-620q0 26-17.5 43T780-560ZM290-710q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T350-770q0 26-17.5 43T290-710Zm380 0q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T730-770q0 26-17.5 43T670-710Zm-190-50q-26 0-43-17t-17-43q0-25 17-42.5t43-17.5q25 0 42.5 17.5T540-820q0 26-17.5 43T480-760Z"/></svg>`
+
+    const restIconContent = `
+    <svg width="256px" height="271px" viewBox="0 0 256 271" version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid">
+        <title>Angular</title>
+        <defs>
+            <linearGradient x1="25.0714876%" y1="90.9292007%" x2="96.1321855%" y2="55.1837089%" id="linearGradient-1">
+                <stop stop-color="#E40035" offset="0%"></stop>
+                <stop stop-color="#F60A48" offset="24%"></stop>
+                <stop stop-color="#F20755" offset="35.2%"></stop>
+                <stop stop-color="#DC087D" offset="49.4%"></stop>
+                <stop stop-color="#9717E7" offset="74.5%"></stop>
+                <stop stop-color="#6C00F5" offset="100%"></stop>
+            </linearGradient>
+            <linearGradient x1="21.8628652%" y1="12.0575311%" x2="68.3669921%" y2="68.2103006%" id="linearGradient-2">
+                <stop stop-color="#FF31D9" offset="0%"></stop>
+                <stop stop-color="#FF5BE1" stop-opacity="0" offset="100%"></stop>
+            </linearGradient>
+        </defs>
+        <g>
+            <path d="M256,45.1787083 L246.756071,190.336865 L158.373321,0 L256,45.1787083 Z M194.783035,232.875768 L128.000576,270.981182 L61.2169653,232.875768 L74.7998577,199.957744 L181.200142,199.957744 L194.783035,232.875768 Z M128.000576,72.2488146 L162.994709,157.325468 L93.005291,157.325468 L128.000576,72.2488146 Z M9.14940313,190.336865 L0,45.1787083 L97.626679,0 L9.14940313,190.336865 Z" fill="url(#linearGradient-1)"></path>
+            <path d="M256,45.1787083 L246.756071,190.336865 L158.373321,0 L256,45.1787083 Z M194.783035,232.875768 L128.000576,270.981182 L61.2169653,232.875768 L74.7998577,199.957744 L181.200142,199.957744 L194.783035,232.875768 Z M128.000576,72.2488146 L162.994709,157.325468 L93.005291,157.325468 L128.000576,72.2488146 Z M9.14940313,190.336865 L0,45.1787083 L97.626679,0 L9.14940313,190.336865 Z" fill="url(#linearGradient-2)"></path>
+        </g>
+    </svg>    
+    `
     
     this.iconRegistry.addSvgIconLiteral('database', this.sanitizer.bypassSecurityTrustHtml(svgIconContent));
     this.iconRegistry.addSvgIconLiteral('web', this.sanitizer.bypassSecurityTrustHtml(webIconContent));
@@ -267,6 +298,7 @@ export class AppComponent {
     this.iconRegistry.addSvgIconLiteral('finance', this.sanitizer.bypassSecurityTrustHtml(financeIconContent));
     this.iconRegistry.addSvgIconLiteral('computer', this.sanitizer.bypassSecurityTrustHtml(computerIconContent));
     this.iconRegistry.addSvgIconLiteral('eduSpecial', this.sanitizer.bypassSecurityTrustHtml(eduIconContent));
+    this.iconRegistry.addSvgIconLiteral('restaurant', this.sanitizer.bypassSecurityTrustHtml(restIconContent));
 
     
   }
