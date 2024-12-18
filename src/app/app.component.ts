@@ -1,14 +1,13 @@
 import { ChangeDetectorRef, Component, ElementRef, ViewChild } from '@angular/core';
 import { MatIconRegistry } from '@angular/material/icon';
 import { DomSanitizer } from '@angular/platform-browser';
-import { jsPDF } from 'jspdf';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent {  
 
   @ViewChild('profileCard')
   profileCard!: ElementRef;
@@ -305,21 +304,7 @@ export class AppComponent {
 
 
   download() {
-    this.cdr.detectChanges();  // Ensure Angular renders everything before calling html2pdf
-
-    const doc = new jsPDF();
-
-    // Get the content to be downloaded as PDF
-    const profileContent = this.profileCard.nativeElement;
-
-    // Convert the HTML content to PDF
-    doc.html(profileContent, {
-      callback: (doc) => {
-        doc.save('profile.pdf'); // Save the file with the name 'profile.pdf'
-      },
-      x: 10,
-      y: 10
-    });
+    console.log('Option Enabled Soon...!');
   }
 
 }
