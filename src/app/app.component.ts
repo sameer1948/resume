@@ -32,7 +32,7 @@ export class AppComponent {
   works : string = 'Tata Consultancy Services';
 
   email : string = 'Sameer.Sameer185@gmail.com';
-  phone : string = '+91 - 8790761948';
+  phone : string = '+91 - 8790761948 ';
   //address : string = '3-98, Water Tank Street, PedaRayavaram, Rangampet Mandal, Andhra Pradesh, PIN : 533291';
   address : string = 'Rajahmundry, Andhra Pradesh';
 
