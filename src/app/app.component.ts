@@ -303,8 +303,13 @@ export class AppComponent {
   }
 
 
-  download() {
-    console.log('Option Enabled Soon...!');
+  downloadPdf() {
+    const link = document.createElement('a');
+    link.href = 'assets/sameer.pdf';  
+    link.download = 'Sameer_Sheik.pdf';    
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   }
 
 }
