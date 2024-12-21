@@ -103,24 +103,21 @@ mat-grid-tile {
   overflow: hidden;
 }
 
-/* 
-mat-grid-tile{border-radius: 1%;  
-  border: 4px solid aqua; 
-  border-color: blueviolet;
-    } */
-
-/* .projects-card {
-  margin: 10px;
-  width: 100%;
-  overflow: hidden;  
-  transition: transform 0.3s ease-in-out;
-  &:hover {
-    transform: scale(1.05); 
-  }  
-} */
 .projects-card {
   margin-top: 65px;
   margin-bottom: 80px;
+  width: 100%;
+
+  .projects-card-list-item {
+    height: 100%;
+    width: 100%;
+
+  }
+}
+
+.education-section {
+  width: 80%;
+  height: 100%;
 }
 
 .experience-card,
@@ -151,7 +148,6 @@ mat-grid-tile{border-radius: 1%;
   color: rgba(0, 0, 0, 0.6);
   margin-left: 10px;
 }
-
 
 .stack-section {
   display: flex;
@@ -195,7 +191,7 @@ mat-grid-tile{border-radius: 1%;
 .interests-card-point,
 .abouts-card-point,
 .achievements-card-point,
-.educations-card-point {  
+.educations-card-point {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
 
@@ -205,18 +201,17 @@ mat-grid-tile{border-radius: 1%;
 
 }
 
-/* .projects-card-point p {
-  margin: 10px;
-  word-wrap: break-word;
-  white-space: normal;
-} */
-
 .signature {
-  font-family: 'Pacifico', cursive; /* Custom script font */
+  font-family: 'Pacifico', cursive;  
   font-size: 18px;
-  color: #333; /* Dark color for readability */
-  letter-spacing: 2px; /* Slight letter spacing */
-  font-weight: normal; /* Normal weight for a handwritten look */  
-  transform: skewX(-10deg); /* Skewed for a handwritten effect */
+  color: #333;  
+  letter-spacing: 2px;
+  font-weight: normal;
+  transform: skewX(-10deg);
 }
 
+.footer-section {
+  display: flex;
+  justify-content:center;
+  gap: 20px;
+}

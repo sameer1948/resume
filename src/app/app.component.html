@@ -69,7 +69,7 @@
 
       <mat-grid-tile colspan="2" rowspan="5">
 
-        <mat-card class="projects-card" appearance="outlined" style="width: 100%;"> 
+        <mat-card class="projects-card" appearance="outlined"> 
 
           <mat-card-header>
             <mat-card-title><mat-icon>work_history</mat-icon> Work Experience</mat-card-title>
@@ -81,7 +81,7 @@
 
             . <mat-list role="list" *ngFor="let experience of workExperience">
 
-              <mat-list-item role="listitem" style="height: 100%;width: 100%;">
+              <mat-list-item role="listitem" class="projects-card-list-item">
 
                 <mat-card class="experience-card" appearance="outlined">
 
@@ -115,7 +115,7 @@
                     </div>
 
                     <mat-list *ngFor="let rb of experience.resp">
-                      <mat-list-item style="height: 100%;width: 100%;">
+                      <mat-list-item class="projects-card-list-item">
                         <div class="projects-card-point">
                           <mat-icon>adjust</mat-icon> {{rb}}
                         </div>
@@ -188,13 +188,13 @@
 
       <mat-grid-tile rowspan="3">
 
-        <mat-card appearance="outlined" style="width: 80%; height: 100%;">
+        <mat-card appearance="outlined" class="education-section">
           <mat-card-header>
             <mat-card-title><mat-icon>school</mat-icon> Education</mat-card-title>
           </mat-card-header>
           <mat-divider></mat-divider>
           <mat-card-content>
-            <mat-card class="educations-card" *ngFor="let education of educations" style="margin: 10px;">
+            <mat-card class="educations-card" *ngFor="let education of educations">
               <mat-card-header>
                 <div class="header-content">
                   <mat-card-title>
@@ -236,7 +236,7 @@
 
       <mat-grid-tile colspan="2" rowspan="9">
 
-        <mat-card class="projects-card" appearance="outlined" style="width: 100%;">
+        <mat-card class="projects-card" appearance="outlined">
 
           <mat-card-header>
             <mat-card-title><mat-icon>history_edu</mat-icon> Personal Projects</mat-card-title>
@@ -248,7 +248,7 @@
 
             <mat-list *ngFor="let experience of personalExperience">
 
-              <mat-list-item style="height: 100%; width: 100%;">
+              <mat-list-item role="listitem" class="projects-card-list-item">
 
                 <mat-card class="experience-card" appearance="outlined">
                   <mat-card-header>
@@ -421,7 +421,7 @@
 
     </mat-grid-list>
   </mat-card>
-  <mat-card-footer style="display: flex; justify-content: center; gap: 20px;">
+  <mat-card-footer class="footer-section">
     
     <button mat-fab extended color="accent" matTooltip="Download As pdf" (click)="downloadPdf()">
       <mat-icon>download</mat-icon>
